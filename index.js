@@ -18,7 +18,7 @@ MinispadeFilter.prototype.targetExtension = 'js';
 
 MinispadeFilter.prototype.processString = function(code, name) {
   var contents = '';
-  var moduleId = name.replace('lib/', '').replace('.js', '');
+  var moduleId = name.replace('.js', '');
   if (this.useSourceUrl === true) {
     contents = JSON.stringify("(function() {" + code + "})();//# sourceURL=" + moduleId);
   } else {
